@@ -1,22 +1,19 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Pływać każdy może</title>
     <style>
-        /* --- Reset i font --- */
         body {
             font-family: Arial, sans-serif;
             margin: 0; padding: 0;
-            background: #1E90FF; /* intensywny niebieski */
+            background: #1E90FF;
             overflow-x: hidden;
             position: relative;
             min-height: 100vh;
             color: #003344;
         }
-
-        /* --- Animacja fal (3 warstwy) --- */
         .waves {
             position: fixed;
             bottom: 0;
@@ -34,15 +31,9 @@
             opacity: 0.6;
         }
         @keyframes wave-animation {
-            0% {
-                background-position: 0 0, 0 0, 0 0;
-            }
-            100% {
-                background-position: -400px 0, -200px 0, -100px 0;
-            }
+            0% { background-position: 0 0, 0 0, 0 0; }
+            100% { background-position: -400px 0, -200px 0, -100px 0; }
         }
-
-        /* --- Header transparentny, żeby fale były widoczne --- */
         header {
             background: rgba(0, 105, 148, 0.6);
             color: white;
@@ -50,12 +41,10 @@
             text-align: center;
             position: relative;
             z-index: 10;
-            font-size: 2em;
+            font-size: 1.8em; /* zmniejszone */
             font-weight: bold;
             text-shadow: 1px 1px 3px #004466;
         }
-
-        /* --- Nawigacja --- */
         nav {
             background: rgba(0, 77, 102, 0.5);
             display: flex;
@@ -75,8 +64,6 @@
             background: rgba(0, 51, 77, 0.7);
             border-radius: 6px;
         }
-
-        /* --- Główna sekcja treści --- */
         section {
             padding: 30px 20px;
             max-width: 1000px;
@@ -86,11 +73,9 @@
             border-radius: 10px;
             position: relative;
             z-index: 10;
-            font-size: 1.15em;
+            font-size: 1.05em; /* zmniejszone */
             line-height: 1.6em;
         }
-
-        /* --- Cytat --- */
         blockquote {
             font-style: italic;
             color: #004466;
@@ -99,8 +84,6 @@
             text-align: center;
             line-height: 1.3em;
         }
-
-        /* --- Zdjęcie pod cytatem --- */
         .underwater-photo {
             display: block;
             max-width: 100%;
@@ -109,16 +92,12 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
-
-        /* --- Lista punktowana --- */
         section ul {
             padding-left: 20px;
         }
         section ul li {
             margin-bottom: 10px;
         }
-
-        /* --- Animacja pływającego piktogramu --- */
         .swimmer {
             position: fixed;
             bottom: 20vh;
@@ -135,8 +114,6 @@
             50% { transform: translate(-30px, -15px) rotate(-10deg); }
             100% { transform: translate(0, 0) rotate(0deg); }
         }
-
-        /* --- Responsive --- */
         @media (max-width: 600px) {
             header {
                 font-size: 1.5em;
