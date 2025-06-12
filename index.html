@@ -8,12 +8,12 @@
         /* --- Reset i font --- */
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #a0d8f7; /* jasny błękit bazowy */
+            margin: 0; padding: 0;
+            background: #1E90FF; /* intensywny niebieski */
             overflow-x: hidden;
             position: relative;
             min-height: 100vh;
+            color: #003344;
         }
 
         /* --- Animacja fal (3 warstwy) --- */
@@ -88,18 +88,26 @@
             z-index: 10;
             font-size: 1.15em;
             line-height: 1.6em;
-            color: #003344;
         }
 
         /* --- Cytat --- */
         blockquote {
-            font-size: 1.2em;
             font-style: italic;
-            color: #003344;
-            margin-bottom: 20px;
+            color: #004466;
+            margin-bottom: 25px;
+            font-size: 1.4em;
             text-align: center;
-            border-left: 5px solid #0077be;
-            padding-left: 15px;
+            line-height: 1.3em;
+        }
+
+        /* --- Zdjęcie pod cytatem --- */
+        .underwater-photo {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
         /* --- Lista punktowana --- */
@@ -108,16 +116,6 @@
         }
         section ul li {
             margin-bottom: 10px;
-        }
-
-        /* --- Zdjęcie pływaka --- */
-        .underwater-photo {
-            width: 100%;
-            max-width: 600px;
-            margin: 20px auto;
-            display: block;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
 
         /* --- Animacja pływającego piktogramu --- */
@@ -173,24 +171,28 @@
 
     <section>
         <blockquote>
-            „Pływanie to sztuka, którą każdy może opanować. Zacznij już dziś i odkryj radość z ruchu w wodzie.”
+            <p>„Pływanie to sztuka, którą każdy może opanować.</p>
+            <p>Zacznij już dziś i odkryj radość z ruchu w wodzie.”</p>
         </blockquote>
 
-        <img src="https://images.pexels.com/photos/71276/pexels-photo-71276.jpeg" alt="Mężczyzna pływający pod wodą" class="underwater-photo">
+        <img src="https://images.pexels.com/photos/71276/pexels-photo-71276.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Mężczyzna pływający pod wodą" class="underwater-photo">
 
         <p>
-            Pływanie to jedna z najzdrowszych i najprzyjemniejszych form aktywności fizycznej, 
-            która angażuje niemal wszystkie partie mięśniowe i poprawia kondycję całego ciała. 
-            Niezależnie od wieku i umiejętności, każdy może zacząć pływać i czerpać z tego korzyści.
+            Pływanie to jedna z najzdrowszych i najprzyjemniejszych form aktywności fizycznej 🏊‍♂️🌊, 
+            która angażuje niemal wszystkie partie mięśniowe 💪 i poprawia kondycję całego ciała. 
+            Niezależnie od wieku i umiejętności, każdy może zacząć pływać i czerpać z tego korzyści 😊.
         </p>
         <p>Regularne pływanie pomaga w:</p>
         <ul>
             <li>Wzmacnianiu mięśni: podczas pływania pracują nasze ramiona, nogi, plecy i tułów - wzmacniamy w ten sposób mięśnie i zwiększa ich wytrzymałość.</li>
             <li>Poprawie wydolności sercowo-naczyniowej: pływanie zwiększa pojemność płuc i poprawia krążenie krwi, co przyczynia się do lepszej wydolności serca.</li>
-            <li>Spalaniu kalorii: podczas intensywnego pływania można spalić nawet do 500-700 kalorii na godzinę! To świetny trening cardio.</li>
+            <li>Spalaniu kalorii: podczas intensywnego pływania można spalić nawet do 500-700 kalorii na godzinę! To świetny trening cardio 🔥.</li>
             <li>Zwiększeniu elastyczności: pływanie poprawia zakres ruchu stawów, co jest korzystne dla osób cierpiących na sztywność stawów czy problemy z mobilnością. 
             Jednocześnie nie obciążamy stawów, dlatego pływanie często jest także jedną z form rehabilitacji po kontuzjach, oraz urazach kręgosłupa.</li>
         </ul>
+
+        <p><strong>Poprawa skupienia:</strong> pływając skupiamy się na swoim ciele i ruchu, odrywamy się od wszelkich rozpraszaczy takich jak telefon czy telewizor.</p>
+
         <p>
             Pływanie ma również pozytywny wpływ na zdrowie psychiczne:
         </p>
@@ -200,8 +202,6 @@
             <li>Poprawa samopoczucia: Aktywność fizyczna zwiększa produkcję endorfin, co przyczynia się do poprawy samopoczucia i ogólnego zadowolenia z życia.</li>
             <li>Leczenie depresji i lęku: regularne pływanie może być formą terapii wspomagającej leczenie depresji i zaburzeń lękowych.</li>
         </ul>
-        <p><em>"Udowodniono, że jeśli chory na depresję, będzie spędzał w wodzie od 20 do 60 minut, 3 razy w tygodniu, jego stan psychiczny znacząco się poprawi."</em></p>
-        <p>Poprawa skupienia: pływając skupiamy się na swoim ciele i ruchu, odrywamy się od wszelkich rozpraszaczy takich jak telefon czy telewizor.</p>
     </section>
 
     <div class="swimmer" aria-label="animacja pływaka"></div>
@@ -209,6 +209,7 @@
 
 </body>
 </html>
+
  
 <section id="styles" class="tab-content" style="display:none;">
     <h2>Style pływackie</h2>
