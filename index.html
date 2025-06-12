@@ -5,21 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Pływać każdy może</title>
     <style>
+        /* --- Reset i font --- */
         body {
             font-family: Arial, sans-serif;
             margin: 0; padding: 0;
-            background: #f0f8ff;
+            background: #a0d8f7; /* jasny błękit bazowy */
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
         }
+
+        /* --- Animacja fal (3 warstwy) --- */
+        .waves {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 200%;
+            height: 15vh;
+            background:
+                radial-gradient(circle at 10% 50%, #0077be 25%, transparent 70%),
+                radial-gradient(circle at 30% 50%, #0099de 25%, transparent 70%),
+                radial-gradient(circle at 50% 50%, #005f8e 25%, transparent 70%);
+            background-repeat: repeat-x;
+            background-size: 200px 100%;
+            animation: wave-animation 8s linear infinite;
+            z-index: 1;
+            opacity: 0.6;
+        }
+        @keyframes wave-animation {
+            0% {
+                background-position: 0 0, 0 0, 0 0;
+            }
+            100% {
+                background-position: -400px 0, -200px 0, -100px 0;
+            }
+        }
+
+        /* --- Header transparentny, żeby fale były widoczne --- */
         header {
-            background: #006994;
+            background: rgba(0, 105, 148, 0.6);
             color: white;
-            padding: 15px 20px;
+            padding: 20px;
             text-align: center;
+            position: relative;
+            z-index: 10;
+            font-size: 2em;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px #004466;
         }
+
+        /* --- Nawigacja --- */
         nav {
-            background: #004d66;
+            background: rgba(0, 77, 102, 0.5);
             display: flex;
             justify-content: center;
+            position: relative;
+            z-index: 10;
         }
         nav a {
             color: white;
@@ -27,87 +68,116 @@
             padding: 15px 25px;
             display: inline-block;
             font-weight: bold;
+            transition: background 0.3s ease;
         }
         nav a:hover, nav a.active {
-            background: #00334d;
+            background: rgba(0, 51, 77, 0.7);
+            border-radius: 6px;
         }
+
+        /* --- Główna sekcja treści --- */
         section {
-            padding: 20px;
+            padding: 30px 20px;
             max-width: 1000px;
-            margin: 0 auto 40px;
-            background: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            border-radius: 6px;
+            margin: 40px auto 60px;
+            background: rgba(255 255 255 / 0.9);
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            position: relative;
+            z-index: 10;
+            font-size: 1.15em;
+            line-height: 1.6em;
+            color: #003344;
         }
-        h2 {
-            color: #006994;
-            border-bottom: 2px solid #006994;
-            padding-bottom: 5px;
+
+        /* --- Lista punktowana --- */
+        section ul {
+            padding-left: 20px;
         }
-        .swimmer-section, .style-section, .club-section {
-            margin-bottom: 25px;
-        }
-        img {
-            max-width: 300px;
-            display: block;
+        section ul li {
             margin-bottom: 10px;
-            border-radius: 6px;
         }
-        ul {
-            list-style: inside disc;
-        }
-        iframe {
-            width: 100%;
-            max-width: 560px;
-            height: 315px;
-            border: none;
-            margin-top: 10px;
-            border-radius: 6px;
-        }
-        footer {
-            background: #004d66;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
+
+        /* --- Animacja pływającego piktogramu --- */
+        .swimmer {
             position: fixed;
-            bottom: 0; left: 0; right: 0;
-            font-size: 0.9em;
+            bottom: 20vh;
+            right: 5vw;
+            width: 80px;
+            height: 80px;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/6/6d/Swimming_pictogram.svg') no-repeat center/contain;
+            animation: swim-move 6s ease-in-out infinite alternate;
+            z-index: 10;
+            filter: drop-shadow(0 0 2px rgba(0,0,0,0.4));
+        }
+        @keyframes swim-move {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-30px, -15px) rotate(-10deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 600px) {
+            header {
+                font-size: 1.5em;
+                padding: 15px;
+            }
+            nav a {
+                padding: 10px 15px;
+                font-size: 0.9em;
+            }
+            section {
+                font-size: 1em;
+                margin: 20px 10px 40px;
+            }
+            .swimmer {
+                width: 50px;
+                height: 50px;
+                bottom: 25vh;
+                right: 5vw;
+            }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Pływać każdy może</h1>
-</header>
+    <header>Pływać każdy może</header>
 
-<nav>
-    <a href="#home" class="active" onclick="openTab(event, 'home')">Strona główna</a>
-    <a href="#styles" onclick="openTab(event, 'styles')">Style pływackie</a>
-    <a href="#swimmers" onclick="openTab(event, 'swimmers')">Najlepsi pływacy</a>
-    <a href="#kozienice" onclick="openTab(event, 'kozienice')">Kozienice pływają</a>
-    <a href="#contact" onclick="openTab(event, 'contact')">Kontakt</a>
-</nav>
+    <nav>
+        <a href="#" class="active">Strona główna</a>
+        <a href="#">O pływaniu</a>
+        <a href="#">Kontakt</a>
+    </nav>
 
-<section id="home" class="tab-content" style="display: block;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Swimming_man_01.jpg" alt="Pływak w wodzie" />
-    <blockquote style="font-size: 1.3em; font-style: italic; margin: 20px 0;">
-        „Pływanie to sztuka, którą każdy może opanować. Zacznij już dziś i odkryj radość z ruchu w wodzie.”
-    </blockquote>„Pływanie to sztuka, którą każdy może opanować. Zacznij już dziś i odkryj radość z ruchu w wodzie.”</blockquote>
- <blockquote style="font-size: 1.3em; font-style: italic; margin: 20px 0;">
-<p>Pływanie to jedna z najzdrowszych i najprzyjemniejszych form aktywności fizycznej, która angażuje niemal wszystkie partie mięśniowe i poprawia kondycję całego ciała. Niezależnie od wieku i umiejętności, każdy może zacząć pływać i czerpać z tego korzyści.</p>
+    <section>
+        <p>
+            Pływanie to jedna z najzdrowszych i najprzyjemniejszych form aktywności fizycznej, 
+            która angażuje niemal wszystkie partie mięśniowe i poprawia kondycję całego ciała. 
+            Niezależnie od wieku i umiejętności, każdy może zacząć pływać i czerpać z tego korzyści.
+        </p>
+        <p>Regularne pływanie pomaga w:</p>
+        <ul>
+            <li>Wzmacnianiu mięśni: podczas pływania pracują nasze ramiona, nogi, plecy i tułów - wzmacniamy w ten sposób mięśnie i zwiększa ich wytrzymałość.</li>
+            <li>Poprawie wydolności sercowo-naczyniowej: pływanie zwiększa pojemność płuc i poprawia krążenie krwi, co przyczynia się do lepszej wydolności serca.</li>
+            <li>Spalaniu kalorii: podczas intensywnego pływania można spalić nawet do 500-700 kalorii na godzinę! To świetny trening cardio.</li>
+            <li>Zwiększeniu elastyczności: pływanie poprawia zakres ruchu stawów, co jest korzystne dla osób cierpiących na sztywność stawów czy problemy z mobilnością. 
+            Jednocześnie nie obciążamy stawów, dlatego pływanie często jest także jedną z form rehabilitacji po kontuzjach, oraz urazach kręgosłupa.</li>
+        </ul>
+        <p>
+            Pływanie ma również pozytywny wpływ na zdrowie psychiczne:
+        </p>
+        <ul>
+            <li>Redukcja stresu: kontakt z wodą działa uspokajająco i relaksująco, pomagając w redukcji poziomu stresu i poprawie nastroju. 
+            Rytmiczne, powtarzalne ruchy w wodzie są formą terapii ruchowej i działają niczym medytacja.</li>
+            <li>Poprawa samopoczucia: Aktywność fizyczna zwiększa produkcję endorfin, co przyczynia się do poprawy samopoczucia i ogólnego zadowolenia z życia.</li>
+            <li>Leczenie depresji i lęku: regularne pływanie może być formą terapii wspomagającej leczenie depresji i zaburzeń lękowych.</li>
+        </ul>
+        <p><em>"Udowodniono, że jeśli chory na depresję, będzie spędzał w wodzie od 20 do 60 minut, 3 razy w tygodniu, jego stan psychiczny znacząco się poprawi."</em></p>
+        <p>Poprawa skupienia: pływając skupiamy się na swoim ciele i ruchu, odrywamy się od wszelkich rozpraszaczy takich jak telefon czy telewizor.</p>
+    </section>
 
-<p>Pływanie to nie tylko ważna umiejętność życiowa, ale też efektywny trening całego ciała. Jest to bardzo różnorodny sport, dlatego też jego uprawianie przynosi naszemu zdrowiu wielorakie korzyści.</p>
-
-<p><strong>Wzmacnia układ krwionośny:</strong> Pływanie poprawia wydolność naszego układu krwionośnego, a dzięki temu wzmacnia nasz system odpornościowy. Poprzez trening o średnim natężeniu poprawia się praca naszego serca oraz zwiększa się pojemność naszych płuc.</p>
-
-<p><strong>Wzmacnia mięśnie:</strong> Płynąc nasze ciało musi przeciwstawiać się ruchom wody, a dzięki temu buduje mięśnie. Przy pływaniu ćwiczymy praktycznie wszystkie grupy mięśni.</p>
-
-<p><strong>Poprawia wydolność oraz pojemność naszych płuc:</strong> Tak jak wszystkie sporty wysiłkowe, pływanie również pozytywnie wpływa na nasz układ oddechowy. Podczas wysiłku zwiększa się nasza pojemność płuc, a co za tym idzie wytrzymałość.</p>
-
-<p><strong>Odciążenie kręgosłupa, stawów i ścięgien:</strong> W wodzie siła grawitacji jest mniejsza niż na lądzie, dlatego mamy wrażenie lekkości podczas pływania. Dzięki temu dajemy odpocząć naszym stawom i ścięgnom. Mięśnie utrzymujące kręgosłup wzmacniają się, a wszelkie napięcie z okolic szyi, ramion i pleców będzie znikać.</p>
-
-<p><strong>Redukcja stresu:</strong> Równomierne ruchy ciała i spokojna tafla wody działają na wielu ludzi uspakajająco. Płynąc możesz zostawić za sobą balast codziennych problemów i skoncentrować się tylko na sobie. Podczas uprawiania sportu uwalniane są endorfiny, które u wielu ludzi przekładają się na odczuwanie szczęścia.</p>
+    <div class="swimmer" aria-label="animacja pływaka"></div>
+    <div class="waves" aria-hidden="true"></div>
 
 </body>
 </html>
