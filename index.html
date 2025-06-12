@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pływać każdy może</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0; padding: 0;
+            background: #f0f8ff;
+        }
+        header {
+            background: #006994;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+        }
+        nav {
+            background: #004d66;
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+            display: inline-block;
+            font-weight: bold;
+        }
+        nav a:hover, nav a.active {
+            background: #00334d;
+        }
+        section {
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto 40px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 6px;
+        }
+        h2 {
+            color: #006994;
+            border-bottom: 2px solid #006994;
+            padding-bottom: 5px;
+        }
+        .swimmer-section, .style-section, .club-section {
+            margin-bottom: 25px;
+        }
+        img {
+            max-width: 300px;
+            display: block;
+            margin-bottom: 10px;
+            border-radius: 6px;
+        }
+        ul {
+            list-style: inside disc;
+        }
+        iframe {
+            width: 100%;
+            max-width: 560px;
+            height: 315px;
+            border: none;
+            margin-top: 10px;
+            border-radius: 6px;
+        }
+        footer {
+            background: #004d66;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Pływać każdy może</h1>
+</header>
+
+<nav>
+    <a href="#home" class="active" onclick="openTab(event, 'home')">Strona główna</a>
+    <a href="#styles" onclick="openTab(event, 'styles')">Style pływackie</a>
+    <a href="#swimmers" onclick="openTab(event, 'swimmers')">Najlepsi pływacy</a>
+    <a href="#kozienice" onclick="openTab(event, 'kozienice')">Kozienice pływają</a>
+    <a href="#contact" onclick="openTab(event, 'contact')">Kontakt</a>
+</nav>
+
+<section id="home" class="tab-content" style="display: block;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Swimming_man_01.jpg" alt="Pływak w wodzie" />
+    <blockquote style="font-size: 1.3em; font-style: italic; margin: 20px 0;">
+        „Pływanie to sztuka, którą każdy może opanować. Zacznij już dziś i odkryj radość z ruchu w wodzie.”
+    </blockquote>
+    <p>
+        Pływanie to jedna z najzdrowszych i najprzyjemniejszych form aktywności fizycznej, 
+        która angażuje niemal wszystkie partie mięśniowe i poprawia kondycję całego ciała. 
+        Niezależnie od wieku i umiejętności, każdy może zacząć pływać i czerpać z tego korzyści.
+    </p>
+</section>
+
+<section id="styles" class="tab-content" style="display:none;">
+    <h2>Style pływackie</h2>
+
+    <div class="style-section">
+        <h3>Styl dowolny (kraul)</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8f/Freestyle_swimming_sprint_men.JPG" alt="Styl dowolny" />
+        <p>Styl dowolny, czyli kraul, to najszybszy styl pływacki. Polega na naprzemiennym ruchu ramion i kopnięciach nóg w wodzie.</p>
+        <iframe src="https://www.youtube.com/embed/Nwu5LXCoYXM" allowfullscreen></iframe>
+    </div>
+
+    <div class="style-section">
+        <h3>Styl grzbietowy</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Backstroke_swimming.jpg" alt="Styl grzbietowy" />
+        <p>Styl grzbietowy to pływanie na plecach z naprzemiennym ruchem ramion i kopnięciami nóg.</p>
+        <iframe src="https://www.youtube.com/embed/xGUcEWxqIow" allowfullscreen></iframe>
+    </div>
+
+    <div class="style-section">
+        <h3>Styl klasyczny (żabka)</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Breaststroke_swimming_2.jpg" alt="Styl klasyczny" />
+        <p>Styl klasyczny, zwany żabką, charakteryzuje się symetrycznym ruchem ramion i nóg, przypominającym żabie kopnięcia.</p>
+        <iframe src="https://www.youtube.com/embed/0wVnK_JakMw" allowfullscreen></iframe>
+    </div>
+
+    <div class="style-section">
+        <h3>Styl motylkowy</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Butterfly_stroke_2.jpg" alt="Styl motylkowy" />
+        <p>Styl motylkowy to zaawansowany styl z jednoczesnym ruchem ramion i falującym ruchem ciała.</p>
+        <iframe src="https://www.youtube.com/embed/qhP3W4HrfLc" allowfullscreen></iframe>
+    </div>
+</section>
+
+<section id="swimmers" class="tab-content" style="display:none;">
+    <h2>Najlepsi Pływacy</h2>
+    <div class="swimmer-section">
+        <h3>Michael Phelps (USA)</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Michael_Phelps_Rio_2016.jpg" alt="Michael Phelps" />
+        <ul>
+            <li>23 złote medale olimpijskie (2004–2016)</li>
+            <li>26 złotych medali Mistrzostw Świata (2001–2017)</li>
+            <li>Rekordzista świata w wielu konkurencjach</li>
+        </ul>
+    </div>
+    <div class="swimmer-section">
+        <h3>Katie Ledecky (USA)</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Katie_Ledecky_Rio_2016.jpg" alt="Katie Ledecky" />
+        <ul>
+            <li>7 złotych medali olimpijskich (2012–2021)</li>
+            <li>19 tytułów mistrzyni świata (2013–2022)</li>
+            <li>Specjalistka od długich dystansów</li>
+        </ul>
+    </div>
+    <div class="swimmer-section">
+        <h3>Caeleb Dressel (USA)</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/df/Caeleb_Dressel_2021.jpg" alt="Caeleb Dressel" />
+        <ul>
+            <li>7 złotych medali olimpijskich (2020)</li>
+            <li>15 złotych medali Mistrzostw Świata (2017–2022)</li>
+            <li>Specjalizuje się w stylu dowolnym i motylkowym</li>
+        </ul>
+    </div>
+
+    <div class="swimmer-section">
+        <h3>Otylia Jędrzejczak (Polska)</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Otylia_Jedrzejczak_LM2006.JPG" alt="Otylia Jędrzejczak" />
+        <ul>
+            <li>3 medale olimpijskie: złoto na 200 m motylkowym (2004), dwa srebra (2004)</li>
+            <li>3-krotna mistrzyni świata (2001–2005)</li>
+            <li>Rekordzistka Polski i Europy</li>
+        </ul>
+    </div>
+
+    <div class="swimmer-section">
+        <h3>Radosław Kawęcki (Polska)</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Radoslaw_Kawecki_2015.jpg" alt="Radosław Kawęcki" />
+        <ul>
+            <li>Wielokrotny mistrz Europy w stylu grzbietowym (2012–2021)</li>
+            <li>Wicemistrz świata (2015, 2017)</li>
+            <li>Rekordzista Polski</li>
+        </ul>
+    </div>
+    <div class="swimmer-section">
+        <h3>Alicja Tchórz (Polska)</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Alicja_Tch%C3%B3rz_2021.jpg" alt="Alicja Tchórz" />
+        <ul>
+            <li>Mistrzyni Europy na krótkim basenie (2017)</li>
+            <li>Uczestniczka igrzysk olimpijskich (2016)</li>
+            <li>Specjalistka stylu grzbietowego</li>
+        </ul>
+    </div>
+    <div class="swimmer-section">
+        <h3>Kacper Stokowski (Polska)</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Kacper_Stokowski.jpg" alt="Kacper Stokowski" />
+        <ul>
+            <li>Mistrz Europy w stylu grzbietowym (2021)</li>
+            <li>Reprezentant Polski na Mistrzostwach Świata i Igrzyskach Olimpijskich</li>
+        </ul>
+    </div>
+    <div class="swimmer-section">
+        <h3>Katarzyna Wasick (Polska)</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Katarzyna_Wasick_2022.jpg" alt="Katarzyna Wasick" />
+        <ul>
+            <li>Wicemistrzyni Europy i Mistrzostw Świata na krótkim basenie (2018–2021)</li>
+            <li>Specjalizuje się w sprincie stylem dowolnym</li>
+        </ul>
+    </div>
+    <div class="swimmer-section">
+        <h3>Paweł Korzeniowski (Polska)</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Pawe%C5%82_Korzeniowski_2010.jpg" alt="Paweł Korzeniowski" />
+        <ul>
+            <li>Mistrz Świata na 200 m stylem motylkowym (2005)</li>
+            <li>Wielokrotny mistrz Europy (2002–2012)</li>
+            <li>Uczestnik czterech igrzysk olimpijskich (2000–2012)</li>
+        </ul>
+    </div>
+</section>
+
+<section id="kozienice" class="tab-content" style="display:none;">
+    <h2>Kozienice pływają</h2>
+    <div class="club-section">
+        <h3>Basen w Kozienicach</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Basen_Kozienice.JPG" alt="Basen w Kozienicach" />
+        <p>
+            Oficjalna strona basenu: 
+            <a href="https://www.basenkozienice.pl" target="_blank" rel="noopener">basenkozienice.pl</a>
+        </p>
+    </div>
+
+    <div class="club-section">
+        <h3>Kluby pływackie w Kozienicach</h3>
+        <ul>
+            <li>
+                <strong>Delfin Kozienice</strong><br />
+                Prezes: Marek Gołębiewski<br />
+                Kontakt: delfinkozienice@gmail.com
+            </li>
+            <li>
+                <strong>Aquator Kozienice</strong><br />
+                Prezes: Marcin Pietrzyk<br />
+                Kontakt: aquator.kozienice@gmail.com
+            </li>
+        </ul>
+    </div>
+
+    <div class="club-section">
+        <h3>Zawody pływackie w Kozienicach</h3>
+        <p>
+            W Kozienicach regularnie organizowane są zawody pływackie na różnych poziomach zaawansowania,
+            w których mogą brać udział zarówno dzieci, jak i dorośli. Szczegóły oraz terminy dostępne są na stronach klubów i basenu.
+        </p>
+    </div>
+</section>
+
+<section id="contact" class="tab-content" style="display:none;">
+    <h2>Kontakt</h2>
+    <p>Osoba do kontaktu: <strong>Tomasz Prus</strong></p>
+</section>
+
+<footer>
+    &copy; 2025 Pływać każdy może
+</footer>
+
+<script>
+    function openTab(evt, tabName) {
+        // Ukryj wszystkie sekcje
+        const tabContents = document.querySelectorAll(".tab-content");
+        tabContents.forEach(section => section.style.display = "none");
+
+        // Usuń klasę active z wszystkich linków
+        const tabs = document.querySelectorAll("nav a");
+        tabs.forEach(tab => tab.classList.remove("active"));
+
+        // Pokaż wybraną sekcję
+        document.getElementById(tabName).style.display = "block";
+
+        // Dodaj klasę active do klikniętego linku
+        evt.currentTarget.classList.add("active");
+    }
+</script>
+
+</body>
+</html>
