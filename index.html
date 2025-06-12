@@ -8,7 +8,8 @@
         /* --- Reset i font --- */
         body {
             font-family: Arial, sans-serif;
-            margin: 0; padding: 0;
+            margin: 0;
+            padding: 0;
             background: #a0d8f7; /* jasny błękit bazowy */
             overflow-x: hidden;
             position: relative;
@@ -90,12 +91,33 @@
             color: #003344;
         }
 
+        /* --- Cytat --- */
+        blockquote {
+            font-size: 1.2em;
+            font-style: italic;
+            color: #003344;
+            margin-bottom: 20px;
+            text-align: center;
+            border-left: 5px solid #0077be;
+            padding-left: 15px;
+        }
+
         /* --- Lista punktowana --- */
         section ul {
             padding-left: 20px;
         }
         section ul li {
             margin-bottom: 10px;
+        }
+
+        /* --- Zdjęcie pływaka --- */
+        .underwater-photo {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
 
         /* --- Animacja pływającego piktogramu --- */
@@ -150,6 +172,12 @@
     </nav>
 
     <section>
+        <blockquote>
+            „Pływanie to sztuka, którą każdy może opanować. Zacznij już dziś i odkryj radość z ruchu w wodzie.”
+        </blockquote>
+
+        <img src="https://images.pexels.com/photos/71276/pexels-photo-71276.jpeg" alt="Mężczyzna pływający pod wodą" class="underwater-photo">
+
         <p>
             Pływanie to jedna z najzdrowszych i najprzyjemniejszych form aktywności fizycznej, 
             która angażuje niemal wszystkie partie mięśniowe i poprawia kondycję całego ciała. 
