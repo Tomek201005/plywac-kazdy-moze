@@ -419,23 +419,3 @@ Najczęściej popełniane błędy w stylu klasycznym (żabka)
     &copy; 2025 Pływać każdy może
 </footer>
 
-<script>
-    function openTab(evt, tabName) {
-        // Ukryj wszystkie sekcje
-        const tabContents = document.querySelectorAll(".tab-content");
-        tabContents.forEach(section => section.style.display = "none");
-
-        // Usuń klasę active z wszystkich linków
-        const tabs = document.querySelectorAll("nav a");
-        tabs.forEach(tab => tab.classList.remove("active"));
-
-        // Pokaż wybraną sekcję
-        document.getElementById(tabName).style.display = "block";
-
-        // Dodaj klasę active do klikniętego linku
-        evt.currentTarget.classList.add("active");
-    }
-</script>
-
-</body>
-</html>
